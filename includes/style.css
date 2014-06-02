@@ -1,0 +1,19 @@
+*
+{
+	margin:0px;
+}
+
+header
+{
+	height:106px;
+	background-color:#001d3a;
+}
+
+
+#logo
+{
+	background-color:pink;
+	height:106px;
+	width:100px;
+	float:left;
+}
