@@ -1,21 +1,70 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 	<head>
-		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-		<link rel = "stylesheet" href = "includes/style.css">
-		<script type="text/javascript" src="http://code.jquery.com/jquery-1.7.1.min.js"></script>
-		<script type="text/javascript" src="includes/buttons.js"></script>
-		<title>Project</title>
+		<title> Final Project </title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="initial-scale=1, width=device-width">
+		<link rel="stylesheet"  href="includes/styles.css">
+		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
+		<script>
+			$(document).ready(function(){
+			var index = 0;
+			var sHTML = "";
+				$.getJSON("includes/db.json",function(data){
+					$.each(data,function(key,val){
+						while(index < 3){
+							console.log(val[index].name + ", " + val[index].city + "\n");
+							index++;
+						}
+						
+					});
+					console.log(sHTML);
+				});
+			});
+		</script>
+		
 	</head>
+
 	<body>
 		<div id="wrapper">
-			<button id="button">stupid button</button>
 			<header>
-				<a href="#" id="logo"></a>
+				<section> <a href="" data-transition="flow"> </a> </section>
+				<section>  </section>
+				<section> <a href="" data-transition="flow"> </a> </section>
 			</header>
+			<nav id="main-nav">
+				
+				<ul>
+					<li> <a href="#" data-transition="flow"> </a> </li>
+					<li> <a href="#" data-transition="flow"> </a> </li>
+				</ul>
+				<div class="clear"> </div>
+			</nav>	
 			<section id="content">
+				
+				<section> </section>
+				
+				<section> </section>
+				
 			</section>
-			<footer>
+			<div class="clear"> </div>
+			<section id="bigContent">
+				
+				<section> </section>
+			
+			</section>
+			
+			<footer> 
+				<nav>
+					
+					<ul>
+						<li> <a href="#" data-transition="flow"> </a> </li>
+						<li> <a href="#" data-transition="flow"> </a> </li>
+						<li> <a href="#" data-transition="flow"> </a> </li>
+						<li> <a href="#" data-transition="flow"> </a> </li>
+					</ul>
+					<div class="clear"> </div>
+				</nav>
 			</footer>
 		</div>
 	</body>

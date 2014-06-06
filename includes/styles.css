@@ -1,0 +1,139 @@
+* {
+	margin:0;
+	padding:0;	
+}
+
+ul,li{
+	text-decoration: none;
+	list-style-type: none;
+}
+
+#wrapper{
+	width:640px;
+	height:1136px;
+	margin:0 auto;
+}
+
+header{
+	width:640px;
+	height:114px;
+}
+
+header > section:first-child a{
+	background-image: url(../images/lefthdr1.jpg);
+	height:116px;
+	width:82px;
+	float:left;
+}
+
+header > section:nth-child(2){
+	background-color:#b2b2b2;
+	border-top:2px solid black;
+	border-bottom:3px solid black;
+	height:111px;
+	width:456px;
+	float:left;
+}
+
+header > section:nth-child(3) a{
+	background-image: url(../images/lefthdr3.jpg);
+	height:116px;
+	width:102px;
+	float:left;
+}
+
+#main-nav > ul {
+	width:640px;
+	height:75px;
+}
+
+#main-nav > ul > li:first-child a{
+	border-top:1px solid black;
+	border-bottom:3px solid black;
+	border-left:2px solid black;
+	border-right:2px solid black;
+	width:316px;
+	height:71px;
+	float:left;
+}
+
+#main-nav > ul > li:nth-child(2) a{
+	border-top:1px solid black;
+	border-bottom:3px solid black;
+	border-left:2px solid black;
+	border-right:2px solid black;
+	width:316px;
+	height:71px;
+	float:left;
+}
+
+.clear{
+	clear:both;
+}
+
+#content{
+	width:640px;
+	height:840px;
+}
+
+#content > section{
+	width:320px;
+	height:840px;
+	float:left;
+}
+
+#content > section:first-child{
+	background-image: url(../images/left-main-content.jpg);
+}
+
+#content > section:nth-child(2){
+	background-image: url(../images/right-main-content.jpg);
+}
+
+
+footer > nav {
+	width:640px;
+	height:105px;
+	background-image:url(../images/footer.jpg);
+	float:left;
+}
+
+footer > nav > ul > li:first-child a{
+	background-image:url(../images/left1.jpg);
+	float:left;
+	border-right:3px solid black;
+	border-bottom:3px solid black;
+	border-left:2px solid black;
+	width:156px;
+	height:102px;
+}
+
+footer > nav > ul > li:nth-child(2) a{
+	background-image:url(../images/left2.jpg);
+	float:left;
+	border-right:3px solid black;
+	border-bottom:3px solid black;
+	width:156px;
+	height:102px;
+}
+
+footer > nav > ul > li:nth-child(3) a{
+	background-image:url(../images/left3.jpg);
+	float:left;
+	border-right:3px solid black;
+	border-bottom:3px solid black;
+	width:158px;
+	height:102px;
+}
+footer > nav > ul > li:nth-child(4) a{
+	background-image:url(../images/left4.jpg);
+	float:left;
+	border-right:2px solid black;
+	border-bottom:3px solid black;
+	width:157px;
+	height:102px;
+}
+
+
+
+

@@ -1,0 +1,28 @@
+{
+	"worldLocation" :
+	[
+			{
+				"name": "Hyde Park",
+				"city": "London",
+				"images": [	
+							{"thumbImg": "thumbURL", "bigImg": "bigImgURL", "local": true},
+							{"thumbImg": "thumbURL", "bigImg": "bigImgURL", "local": true},
+							{"thumbImg": "thumbURL", "bigImg": "bigImgURL", "local": true}
+				]
+			},
+			
+			{
+				"name": "Madison Square Garden",
+				"city": "New York City",
+				"images": [	
+							{"thumbImg": "thumbURL", "bigImg": "bigImgURL", "local": true},
+							{"thumbImg": "thumbURL", "bigImg": "bigImgURL", "local": true},
+							{"thumbImg": "thumbURL", "bigImg": "bigImgURL", "local": true}
+				]
+			},
+			
+			{
+			
+			}
+	]
+}
