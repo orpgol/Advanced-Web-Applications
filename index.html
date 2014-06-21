@@ -3,58 +3,45 @@
 	<head>
 		<title> Final Project </title>
 		<meta charset="utf-8" />
-		<meta name="viewport" content="initial-scale=1, width=device-width">
+		<meta name="viewport" content="initial-scale=0.5, width=device-width">
 		<link rel="stylesheet"  href="includes/styles.css">
+		<link rel="stylesheet"  href="includes/jquery.mobile-1.4.2.css">
+		<script type="text/javascript" src="includes/jquery.mobile-1.4.2.js"> </script>
 		<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.6.2/jquery.min.js"> </script>
-		<script>
-			$(document).ready(function(){
-			var index = 0;
-			var sHTML = "";
-				$.getJSON("includes/db.json",function(data){
-					$.each(data,function(key,val){
-						while(index < 3){
-							console.log(val[index].name + ", " + val[index].city + "\n");
-							index++;
-						}
-						
-					});
-					console.log(sHTML);
-				});
-			});
-		</script>
+		<script type="text/javascript" src="includes/loadJSON.js"> </script>
+		<script type="text/javascript" src="includes/dragable.js"> </script>
+		<script type="text/javascript" src="includes/buttons.js"> </script>
 		
 	</head>
 
 	<body>
-		<div id="wrapper">
-			<header>
-				<section> <a href="" data-transition="flow"> </a> </section>
+		<div id="wrapper" data-role="page">
+			<header data-role="header">
+				<section> <a href="#" data-transition="flow"> </a> </section>
 				<section>  </section>
-				<section> <a href="" data-transition="flow"> </a> </section>
+				<section> <a href="#" data-transition="flow"> </a> </section>
 			</header>
 			<nav id="main-nav">
-				
 				<ul>
-					<li> <a href="#" data-transition="flow"> </a> </li>
-					<li> <a href="#" data-transition="flow"> </a> </li>
+					<li> <a href="#" data-transition="flow" id="tourist"> Tourists </a> </li>
+					<li> <a href="#" data-transition="flow" id="local"> Locals </a> </li>
 				</ul>
 				<div class="clear"> </div>
 			</nav>	
-			<section id="content">
+			<section id="content" role="main">
 				
-				<section> </section>
+				<section ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="dragOver(event)"> </section>
 				
-				<section> </section>
+				<section ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="dragOver(event)">  </section>
 				
 			</section>
 			<div class="clear"> </div>
-			<section id="bigContent">
+			<section id="bigContent" role="main">
 				
-				<section> </section>
 			
 			</section>
 			
-			<footer> 
+			<footer data-role="footer"> 
 				<nav>
 					
 					<ul>
