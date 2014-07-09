@@ -4,6 +4,7 @@
 		<title> Final Project </title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="initial-scale=0.5, width=device-width">
+		
 		<link rel="stylesheet"  href="includes/styles.css">
 		<link rel="stylesheet"  href="includes/jquery.mobile-1.4.2.css">
 		<script type="text/javascript" src="includes/jquery.mobile-1.4.2.js"> </script>
@@ -11,44 +12,112 @@
 		<script type="text/javascript" src="includes/loadJSON.js"> </script>
 		<script type="text/javascript" src="includes/dragable.js"> </script>
 		<script type="text/javascript" src="includes/buttons.js"> </script>
-		
+		<style>
+			@font-face {
+			    font-family: raleway;
+			    src: url(includes/fonts/Raleway-Regular.ttf);
+			}
+			
+			@font-face {
+			    font-family: ralewayBold;
+			    src: url(includes/fonts/Raleway-SemiBold.ttf);
+			}
+			
+			@font-face {
+			    font-family: extraLight;
+			    src: url(includes/fonts/Raleway-ExtraLight.ttf);
+			}
+		</style>
 	</head>
 
 	<body>
+		<div id="splashscreen">
+			<img src="images/splash.png" />
+		</div>
 		<div id="wrapper" data-role="page">
-			<header data-role="header">
-				<section> <a href="#" data-transition="flow"> </a> </section>
-				<section>  </section>
-				<section> <a href="#" data-transition="flow"> </a> </section>
-			</header>
-			<nav id="main-nav">
-				<ul>
-					<li> <a href="#" data-transition="flow" id="tourist"> Tourists </a> </li>
-					<li> <a href="#" data-transition="flow" id="local"> Locals </a> </li>
-				</ul>
+			<!-- Main\First page Section -->
+			<section id="main-page" a="#main">
+				<header data-role="header">
+					<section> <a data-transition="flow"> </a> </section>
+					<section>  </section>
+					<section> <a  data-transition="flow"> </a> </section>
+				</header>
+				<nav id="main-nav">
+					<ul>
+						<li> <a href="#" data-transition="flow" id="tourist"> Tourists </a> </li>
+						<li> <a href="#" data-transition="flow" id="local"> Locals </a> </li>
+					</ul>
+					<div class="clear"> </div>
+				</nav>	
+				<section id="content" role="main">
+					
+					<section ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="dragOver(event)"> </section>
+					
+					<section ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="dragOver(event)">  </section>
+					
+				</section>
 				<div class="clear"> </div>
-			</nav>	
-			<section id="content" role="main">
+				<section id="bigContent" role="main">
+					
 				
-				<section ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="dragOver(event)"> </section>
-				
-				<section ondragenter="dragEnter(event)" ondrop="dragDrop(event)" ondragover="dragOver(event)">  </section>
+				</section>
 				
 			</section>
-			<div class="clear"> </div>
-			<section id="bigContent" role="main">
-				
-			
+			<!-- Favorite Section -->
+			<section id="savedLocations" role="menu" a="favorties">
+				<section id="savedLocationsHeader">
+					<section> <a class="back" href="#" data-transition="flow"> </a> </section>
+					
+					<section> <a>Saved Locations</a>  </section>
+					<div class="clear"> </div>
+					
+					<section id="favoriteHolder">
+						
+					</section>
+					<div class="clear"> </div>
+				</section>
 			</section>
 			
+			<section id="settings">
+				<section> <a class="back" href="#" data-transition="flow"> </a> </section>
+				<section> <a> Settings </a> </section>
+				
+				<section id="myProfile">
+					<article> <a> My Profile </a> </article>
+					<section id="turOrLoc">
+						<article> </article>
+						<article> </article>	
+					</section>
+				</section>
+				
+				<section id="notifications">
+					<article> <a> Notifications </a> </article>
+					<section> <article class="typeOfNotification"> <a> Push Notification </a> </article> <article class="onOff activeButton"> <a> ON </a> </article> <article class="onOff"> <a> OFF </a> </article> </section>
+					<section> <article class="typeOfNotification"> <a> Sound </a> </article> <article class="onOff">  <a> ON </a> </article> <article class="onOff activeButton"> <a> OFF </a> </article> </section>
+				</section>
+				
+				<div class="clear"> </div>
+			</section>
+			
+			<section id="addPicture" role="menu" a="add">
+				
+				<section> <article> </article> <article> <a> Shoot </a> </article> </section>
+				<section> <a> or </a> </section>
+				<section> <article> </article> <article> <a> Upload </a></article> </section>
+				
+				<div class="clear"> </div>
+			</section>
+			
+			
+			<!-- Bottom navigator Section -->
 			<footer data-role="footer"> 
 				<nav>
 					
 					<ul>
-						<li> <a href="#" data-transition="flow"> </a> </li>
-						<li> <a href="#" data-transition="flow"> </a> </li>
-						<li> <a href="#" data-transition="flow"> </a> </li>
-						<li> <a href="#" data-transition="flow"> </a> </li>
+						<li class="bottom-button"> <a href="#" data-transition="flow"> </a> </li>
+						<li class="bottom-button"> <a href="#favorties" id="savedLocationsButton" data-transition="flow"> </a> </li>
+						<li class="bottom-button"> <a href="#" data-transition="flow" id="addPictureButton"> </a> </li>
+						<li class="bottom-button"> <a href="#" data-transition="flow" id="settingsButton"> </a> </li>
 					</ul>
 					<div class="clear"> </div>
 				</nav>

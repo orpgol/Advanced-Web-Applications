@@ -4,6 +4,7 @@
 			{
 				"name": "Hyde Park",
 				"city": "London",
+				"favorite": true,
 				"images": [	
 							{
 								"thumbImg": "http://www.travelstay.com/images/385649/5/Hyde_Park.jpg",
@@ -66,6 +67,7 @@
 			{
 				"name": "Madison Square Garden",
 				"city": "New York City",
+				"favorite": true,
 				"images": [	
 							{"thumbImg": "thumbURL", "mdlImg": "bigImgURL", "bigImg": "bigImgURL" , "local": true},
 							{"thumbImg": "thumbURL", "mdlImg": "bigImgURL", "bigImg": "bigImgURL" , "local": true},
@@ -76,6 +78,7 @@
 			{
 				"name": "Bondi Beach",
 				"city": "Sydney",
+				"favorite": true,
 				"images": [	
 							{"thumbImg": "thumbURL", "mdlImg": "bigImgURL", "bigImg": "bigImgURL" , "local": true},
 							{"thumbImg": "thumbURL", "mdlImg": "bigImgURL", "bigImg": "bigImgURL" , "local": true},
