@@ -22,7 +22,10 @@ function dragDrop(ev) {
    var data = ev.dataTransfer.getData("Text");
    console.log(data);
    console.log(ev.target)
-   ev.target.appendChild(document.getElementById(data));
+   if($(ev.target).prop("tagName") == 'IMG')
+   	  ev.target.parentNode.parentNode.appendChild(document.getElementById(data));
+   else
+   	  ev.target.appendChild(document.getElementById(data));
    ev.stopPropagation();
    return false;
 }

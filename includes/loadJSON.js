@@ -17,17 +17,14 @@ $(document).ready(function(){
 					var ID = key + picIndex;
 					if(val[index].images[sIndex].local == true){
 						$("#content > section:nth-child(2)").append( "<article id='" + ID + "' draggable='true' ondragstart='return dragStart(event)'> <img src='" + val[index].images[sIndex].thumbImg + "' id='" + ID + "'> </article>" );
-						console.log("Local image URL : " + val[index].images[sIndex].thumbImg + " ID : " + ID + " has added\n");
 						picIndex++;
 					}
 					else if(val[index].images[sIndex].local == false){
 						$("#content > section:first-child").append( "<article id='" + ID + "' draggable='true' ondragstart='return dragStart(event)'> <img src='" + val[index].images[sIndex].thumbImg + "' id='" + ID + "'> </article>" );
-						console.log("Tourist image URL : " + val[index].images[sIndex].thumbImg + " ID : " + ID + " has added\n");
 						picIndex++;
 					}
 					sIndex++;
 				}
-				console.log(val[index].name + ", " + val[index].city + "\n");
 				namesOfPlaces[index] = val[index].name + ", " + val[index].city;
 				sIndex = 0;		// intialize to first value
 				picIndex = 1;	// intialize to first value
@@ -36,7 +33,5 @@ $(document).ready(function(){
 					
 		});
 	});
-	
-	
 });
 

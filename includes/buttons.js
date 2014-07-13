@@ -3,6 +3,7 @@ var curr = "content";  		// current starts with 'content'
 var currMenu = null;		// global var that tells me if a menu item is active
 var addPicIndicator = false;
 var settingsIndicator = false;
+var globIndex = 0;				// data-base index. start from first database
 
 $(function() 
 {
@@ -12,33 +13,34 @@ $(function()
       .click(function( event ) 
       {
       	if(this.id == 'local' || this.id == 'tourist'){
-     		console.log(this.id + " was pressed");		// print pressed type to console
-     		console.log("curr " + curr);
-	      	document.getElementById('bigContent').style.display='block';
-	      	document.getElementById('content').style.display='none';
+      	
 	      	if (this.id == 'local'){					// decide wich function to call
+	      	
 	      		if(!active){
+	      			$('#bigContent').css('display','block');
+	      			$('#content').css('display','none');
 	      			$('#bigContent').empty();		// clear content of bigContent
-		      		$("#main-nav" ).find( "li:first-child" ).css( "display", "none" );	// make the second link disapear
-		      		$("#main-nav" ).find( "li:nth-child(2)" ).css( "width", "100%" );	// current class width changes to full width
+		      		$("#main-nav").find("li:first-child").css("display", "none");	// make the second link disapear
+		      		$("#main-nav").find("li:nth-child(2)").css("width", "100%");	// current class width changes to full width
 		      		active = true;
-		      		$("#main-nav").css("background-image","");
 		      		curr = "bigContent"
 	      		}
 	      		else{
-	      			document.getElementById('bigContent').style.display='none';
-	      			$("#main-nav" ).find( "li:nth-child(2)" ).css( "width", "49.5%" );
-	      			$( "#main-nav" ).find( "li:first-child" ).css( "display", "block" );
-	      			document.getElementById('tourist').style.display='block';
-	      			document.getElementById('content').style.display='block';
+	      			$('#bigContent').css('display','none');
+	      			$("#main-nav").find( "li:nth-child(2)" ).css( "width", "49.5%" );
+	      			$("#main-nav").find( "li:first-child" ).css( "display", "block" );
+	      			$('#tourist').css('display','block');
+	      			$('#content').css('display','block');
 	      			active = false;
 	      			curr = "content"
 	      		}
 	      	}
 	      	if (this.id == 'tourist'){
+	      	
 	      		if(!active){
+	      			$('#bigContent').css('display','block');
+	      			$('#content').css('display','none');	
 	      			$('#bigContent').empty();
-		      		
 		      		$("#main-nav" ).find( "li:nth-child(2)" ).css( "display", "none" );
 		      		$("#main-nav" ).find( "li:first-child" ).css( "width", "100%" );
 		      		
@@ -46,12 +48,11 @@ $(function()
 		      		curr = "bigContent"
 	      		}
 	      		else{
-	      			document.getElementById('bigContent').style.display='none';
-	      			
-	      			$("#main-nav" ).find( "li:first-child" ).css( "width", "49.5%" );
-	      			$( "#main-nav" ).find( "li:nth-child(2)" ).css( "display", "block" );
-	      			document.getElementById('local').style.display='block';
-	      			document.getElementById('content').style.display='block';
+	      			$('#bigContent').css('display','none');
+	      			$('#main-nav').find( "li:first-child" ).css( "width", "49.5%" );
+	      			$('#main-nav').find( "li:nth-child(2)" ).css( "display", "block" );
+	      			$('#local').css('display','block');
+	      			$('#content').css('display','block');
 	      			active = false;
 	      			curr = "content"
 	      		}
@@ -62,15 +63,13 @@ $(function()
       
       // if user clicks the "tourist" button - pull data from JSON
 	$('#tourist').click(function() {
-		index = 0;
 		sIndex = 0;
 		$.getJSON("includes/db.json",function(data){
 			$.each(data,function(key,val){
 				if(active){
-					while(sIndex < val[0].images.length){
-						if(val[0].images[sIndex].local == false){		// instead of 0 we should put an indicator that determines the current Location
-							$("#bigContent").append( "<article id='bigArticle" + sIndex + "'> <img src='" + val[0].images[sIndex].mdlImg + "' id='bigImg" + sIndex + "'> </article>" );
-							console.log("Tourist image URL : " + val[0].images[sIndex].mdlImg + " ID : bigImg" + sIndex + " has added\n");
+					while(sIndex < val[globIndex].images.length){
+						if(val[globIndex].images[sIndex].local == false){		// instead of 0 we should put an indicator that determines the current Location
+							$("#bigContent").append( "<article id='bigArticle" + sIndex + "'> <img src='" + val[globIndex].images[sIndex].mdlImg + "' id='bigImg" + sIndex + "'> </article>" );
 						}
 						sIndex++;	
 					}	
@@ -82,32 +81,28 @@ $(function()
 	
    	// if user clicks the "local" button - pull data from JSON
    	$('#local').click(function() {
-    	index = 0;
 		sIndex = 0;
 		$.getJSON("includes/db.json",function(data){
 			$.each(data,function(key,val){
 				if(active){
-					while(sIndex < val[0].images.length){
-					if(val[0].images[sIndex].local == true){		// instead of 0 we should put an indicator that determines the current Location
-						$("#bigContent").append( "<article id='bigArticle" + sIndex + "'> <img src='" + val[0].images[sIndex].mdlImg + "' id='bigImg" + sIndex + "'> </article>" );
-						console.log("Local image URL : " + val[0].images[sIndex].mdlImg + " ID : bigImg" + sIndex + " has added\n");
-					}
-					sIndex++;	
-				}	
+					while(sIndex < val[globIndex].images.length){
+						if(val[globIndex].images[sIndex].local == true){		// instead of 0 we should put an indicator that determines the current Location
+							$("#bigContent").append( "<article id='bigArticle" + sIndex + "'> <img src='" + val[globIndex].images[sIndex].mdlImg + "' id='bigImg" + sIndex + "'> </article>" );
+						}
+						sIndex++;	
+					}	
 				}
 				
 			});	
 		});
    	});
    	
-   	
    	$('.back').click(function(){
    		
-   		console.log("current " + currMenu);
-		document.getElementById('savedLocations').style.display='none';
-		document.getElementById('settings').style.display='none';
+		$('#settings').css('display','none');
+		$('#savedLocations').css('display','none');
 		$("#main-page" ).css( "display", "block" );
-		document.getElementById(curr).style.display='block';
+		$('#'+curr).css('display','block');
 		$(currMenu).css("background-color","");					// reset css
 		$('#favoriteHolder').empty();
 		settingsIndicator = false;
@@ -117,25 +112,17 @@ $(function()
 
     $('footer li a').click(function() {
     	var str;												
-    	// for(var i =1; i <= 4; i++){							
-//     		str = "footer > nav > ul > li:nth-child(" + i + ") a";
-//     		//$(str).removeClass("currentBottomLink");
-//     		$(str).css("background-color","#2D2D2D");			// this should be in the button function
-//     	}
-    	
     	
     	if(this.id == 'savedLocationsButton')
     	{
-    		console.log("current " + currMenu);
     		if(currMenu == null || currMenu.id != 'savedLocationsButton')
 			{	
+				$('#favoriteHolder').empty();
 				$(currMenu).css("background-color","");					// reset css
-				//$("#main-nav" ).css( "display", "none" );	// make the links disapear
-				//$("header" ).css( "display", "none" );		// make the links disapear
 				$("#main-page" ).css( "display", "none" );
 				$("#settings" ).css( "display", "none" );
-				document.getElementById(curr).style.display='none';
-				document.getElementById('savedLocations').style.display='block';
+				$('#'+curr).css('display','none');
+				$('#savedLocations').css('display','block');
 				$(this).css("background-color","#212121");				// css pressed
 				settingsIndicator = false;
 				currMenu = this;
@@ -159,11 +146,12 @@ $(function()
     	
     	if(this.id == 'settingsButton'){
     		if(!settingsIndicator){
-    			document.getElementById('savedLocations').style.display='none';
-    			document.getElementById('main-page').style.display='none';
-    			document.getElementById('settings').style.display='block';
-    			settingsIndicator = true;
     			$(currMenu).css("background-color","");					// reset css
+    			$('#'+curr).css('display','none');
+    			$('#main-page').css('display','none');
+    			$('#savedLocations').css('display','none');
+    			$('#settings').css('display','block');
+    			settingsIndicator = true;
     			$(this).css("background-color","#212121");				// css pressed
     			$('#favoriteHolder').empty();
 				currMenu = this;
@@ -174,23 +162,98 @@ $(function()
    	
    	var loadFavoritesFromJSON = function(){
 		var index = 0;
-		console.log("iteration");
 		$.getJSON("includes/db.json",function(data){
 			$.each(data,function(key,val){
 				while(index < val.length){	// this while is running all over the json file
 					if(val[index].favorite){
-						$("#favoriteHolder").append( "<section class='greyRectangle'> </section> <article> <p> " + val[index].name + ", " + val[index].city + "</p> </article>");
+						$("#favoriteHolder").append( "<section class='greyRectangle'> </section> <article class='favs' id='place" + index + "'> <p> " + val[index].name + ", " + val[index].city + "</p> </article>");
 					}
 					index++;
 				}
-							
 			});
 		});
 	}
+	
+	var loadFromFavorites = function(index){
+		globIndex = index;
+		var max = index; max++;
+		var sIndex = 0;					// second index of loop
+		var picIndex = 1;				// index of picture's id
+		var namesOfPlaces = [];			// array of places
+		$.getJSON("includes/db.json",function(data){
+			$.each(data,function(key,val){
+				// checks if location's favorite flag is on/off
+				$("header > section:nth-child(2)").empty();
+				$("#content > section:nth-child(2)").empty();
+				$("#content > section:first-child").empty();
+				$("header > section:nth-child(3) a").css("background-image", "url(images/new-design/like.png)");
+				
+				while(index < max){	// this while is running all over the json file
+					$("header > section:nth-child(2)").append("<h2>" + val[index].name + ", " + val[index].city + "</h2>");
+					while(sIndex < val[index].images.length){		// this while is running over each Location in json and takes its parameters
+						var ID = key + picIndex;
+						if(val[index].images[sIndex].local == true){
+							$("#content > section:nth-child(2)").append( "<article id='" + ID + "' draggable='true' ondragstart='return dragStart(event)'> <img src='" + val[index].images[sIndex].thumbImg + "' id='" + ID + "'> </article>" );
+							picIndex++;
+						}
+						else if(val[index].images[sIndex].local == false){
+							$("#content > section:first-child").append( "<article id='" + ID + "' draggable='true' ondragstart='return dragStart(event)'> <img src='" + val[index].images[sIndex].thumbImg + "' id='" + ID + "'> </article>" );
+							picIndex++;
+						}
+						sIndex++;
+					}
+					namesOfPlaces[index] = val[index].name + ", " + val[index].city;
+					sIndex = 0;		// intialize to first value
+					picIndex = 1;	// intialize to first value
+					
+					index++;
+				}
+			});
+		});
+		$('#savedLocations').css('display','none');
+		$("#main-page" ).css( "display", "block" );
+	}
+	
+	$('#turOrLoc article').click(function() {
+		if($(this).is(':first-child'))
+		{
+			$(this).css('background-image','url(images/new-design/pressed-tourist.png)');
+			$(this).next().css('background-image','url(images/new-design/unpressed-local.png)');
+		}
+		else
+		{
+			$(this).css('background-image','url(images/new-design/pressed-local.png)');
+			$(this).prev().css('background-image','url(images/new-design/unpressed-tourist.png)');
+		}
+	});
+	
+	$(".onOff ").click(function(){
+   		if ( !$( this ).is('activeButton') ) {
+   			$(this).addClass('activeButton');
+   			
+   			if($(this).is(':nth-child(2)')){
+   				$(this).next().removeClass('activeButton');
+   			}
+   			else{
+   				$(this).prev().removeClass('activeButton');	
+   			}
+   		}
+   	});
+   	$("#favoriteHolder").on('click' ,'article', function(event){
+		var id = this.id;
+		id = id[5];
+		loadFromFavorites(id);
+		$(currMenu).css("background-color","");					// reset css
+		$("#main-nav").find( "li:nth-child(2)" ).css( "width", "49.5%" );
+		$('#main-nav').find( "li:first-child" ).css( "width", "49.5%" );
+		$('#content').css('display','block');
+		active = false;
+		currMenu = null;
+		curr = "content"
+	});
      
 });
 
-
-$(window).load(function () {					//splash function
-    $('#splashscreen').fadeOut(500);
+$(window).load(function () {					//splash function & also works only if everything loaded
+    $('#splashscreen').fadeOut(1000);
 });

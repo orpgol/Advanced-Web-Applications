@@ -65,13 +65,30 @@
 			},
 			
 			{
-				"name": "Madison Square Garden",
-				"city": "New York City",
+				"name": "Tel Aviv",
+				"city": "Tel Aviv",
 				"favorite": true,
 				"images": [	
-							{"thumbImg": "thumbURL", "mdlImg": "bigImgURL", "bigImg": "bigImgURL" , "local": true},
-							{"thumbImg": "thumbURL", "mdlImg": "bigImgURL", "bigImg": "bigImgURL" , "local": true},
-							{"thumbImg": "thumbURL", "mdlImg": "bigImgURL", "bigImg": "bigImgURL" , "local": true}
+							{
+								"thumbImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-1.png",
+								"mdlImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-1.png",
+								"bigImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-1.png" ,
+								"local": true
+							},
+							
+							{
+								"thumbImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-1.png",
+								"mdlImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-1.png",
+								"bigImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-1.png" ,
+								"local": false
+							},
+							
+							{
+								"thumbImg": "thumbURL",
+								"mdlImg": "bigImgURL",
+								"bigImg": "bigImgURL" ,
+								"local": true
+							}
 				]
 			},
 			
