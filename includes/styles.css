@@ -23,13 +23,12 @@
     z-index:100;
 }
 
-@media all and (min-width: 641px) {
 	* {
 		margin:0;
 		padding:0;	
 	}
 	
-	header,nav,footer{
+	header,nav,article,footer{
 		display:block;
 	}
 	
@@ -46,6 +45,9 @@
 	a:visited,a:active,a:after{
 		color:black;
 	}
+	
+
+@media all and (min-width: 641px) {
 	
 	body{
 		background-color:#FFCB75;
@@ -501,30 +503,8 @@
 
 
 
-@media all and (max-width: 640px) and (min-width: 200px) {
+@media all and (max-width: 640px) and (min-width: 321px) {
 		
-	* {
-		margin:0;
-		padding:0;	
-	}
-	
-	header,nav,article,footer{
-		display:block;
-	}
-	
-	ul,li{
-		text-decoration: none;
-		list-style-type: none;
-	}
-	
-	a{
-		text-decoration: none;
-		color:black;
-	}
-	
-	a:visited,a:active,a:after{
-		color:black;
-	}
 	
 	#wrapper{
 		width:640px;
@@ -710,6 +690,10 @@
 		margin-top:10px;
 	}
 	
+	#favoriteHolder article:active{
+		background-color:#1984CD;
+	}
+	
 	.greyRectangle{
 		width:20px;
 		height:115px;
@@ -729,8 +713,8 @@
 		/* add layout */
 	#addPicture{
 		display:none;
-		position:absolute;
-		top:812px;
+		position:fixed;
+		bottom:121px;
 		width:640px;
 		border-top:1px solid #3c3d3d;
 		border-right:1px solid black;
@@ -927,6 +911,8 @@
 		width:640px;
 		height:121px;
 		background-color: black;
+		position:fixed;
+		bottom:0px;
 	}
 	
 	.bottom-button a{
@@ -936,7 +922,7 @@
 		background-color:#2D2D2D;
 		background-position:center;
 		background-repeat:no-repeat;
-		float:left;	
+		float:left;
 	}
 	
 	footer > nav > ul > li:first-child a{

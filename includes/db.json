@@ -4,7 +4,7 @@
 			{
 				"name": "Hyde Park",
 				"city": "London",
-				"favorite": true,
+				"favorite": false,
 				"images": [	
 							{
 								"thumbImg": "http://www.travelstay.com/images/385649/5/Hyde_Park.jpg",
@@ -73,20 +73,48 @@
 								"thumbImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-1.png",
 								"mdlImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-1.png",
 								"bigImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-1.png" ,
-								"local": true
-							},
-							
-							{
-								"thumbImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-1.png",
-								"mdlImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-1.png",
-								"bigImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-1.png" ,
 								"local": false
 							},
 							
 							{
-								"thumbImg": "thumbURL",
-								"mdlImg": "bigImgURL",
-								"bigImg": "bigImgURL" ,
+								"thumbImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-2.png",
+								"mdlImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-2.png",
+								"bigImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-2.png" ,
+								"local": false
+							},
+							
+							{
+								"thumbImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-3.png",
+								"mdlImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-3.png",
+								"bigImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-3.png" ,
+								"local": false
+							},
+							
+							{
+								"thumbImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-4.png",
+								"mdlImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-4.png",
+								"bigImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/tourist-img-4.png" ,
+								"local": false
+							},
+							
+							{
+								"thumbImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/local-img-1.png",
+								"mdlImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/local-img-1.png",
+								"bigImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/local-img-1.png" ,
+								"local": true
+							},
+							
+							{
+								"thumbImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/local-img-2.png",
+								"mdlImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/local-img-2.png",
+								"bigImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/local-img-2.png" ,
+								"local": true
+							},
+							
+							{
+								"thumbImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/local-img-3.png",
+								"mdlImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/local-img-3.png",
+								"bigImg": "http://shenkar.html5-book.co.il/2013-2014/html5/dev_87/images/local-img-3.png" ,
 								"local": true
 							}
 				]
@@ -97,9 +125,47 @@
 				"city": "Sydney",
 				"favorite": true,
 				"images": [	
-							{"thumbImg": "thumbURL", "mdlImg": "bigImgURL", "bigImg": "bigImgURL" , "local": true},
-							{"thumbImg": "thumbURL", "mdlImg": "bigImgURL", "bigImg": "bigImgURL" , "local": true},
-							{"thumbImg": "thumbURL", "mdlImg": "bigImgURL", "bigImg": "bigImgURL" , "local": true}
+							{
+								"thumbImg": "http://www.sydney-australia.biz/bondi/graphics/bondi-01.jpg",
+								"mdlImg": "http://www.sydney-australia.biz/bondi/graphics/bondi-01.jpg",
+								"bigImg": "http://www.sydney-australia.biz/bondi/graphics/bondi-01.jpg" ,
+								"local": false
+							},
+							
+							{
+								"thumbImg": "http://www.bigtravelweb.com/images/austrailia_bondi_beach_l.JPG",
+								"mdlImg": "http://www.bigtravelweb.com/images/austrailia_bondi_beach_l.JPG",
+								"bigImg": "http://www.bigtravelweb.com/images/austrailia_bondi_beach_l.JPG",
+								"local": false
+							},
+							
+							{
+								"thumbImg": "http://4.bp.blogspot.com/-2GUGWnfQYa8/UUtVnTBf7TI/AAAAAAAAYKg/Lcjn58bs554/s640/bondi-beach-australia.jpg",
+								"mdlImg": "http://4.bp.blogspot.com/-2GUGWnfQYa8/UUtVnTBf7TI/AAAAAAAAYKg/Lcjn58bs554/s640/bondi-beach-australia.jpg",
+								"bigImg": "http://4.bp.blogspot.com/-2GUGWnfQYa8/UUtVnTBf7TI/AAAAAAAAYKg/Lcjn58bs554/s640/bondi-beach-australia.jpg",
+								"local": false
+							},
+							
+							{
+								"thumbImg": "http://thescuttlefish.files.wordpress.com/2010/08/bondimonsterwave.jpg?w=640",
+								"mdlImg": "http://thescuttlefish.files.wordpress.com/2010/08/bondimonsterwave.jpg?w=640",
+								"bigImg": "http://thescuttlefish.files.wordpress.com/2010/08/bondimonsterwave.jpg?w=640",
+								"local": true
+							},
+							
+							{
+								"thumbImg": "http://sun-surfer.com/photos/2011/12/Seaside-Pools-Bondi-Beach-Australia.jpg",
+								"mdlImg": "http://sun-surfer.com/photos/2011/12/Seaside-Pools-Bondi-Beach-Australia.jpg",
+								"bigImg": "http://sun-surfer.com/photos/2011/12/Seaside-Pools-Bondi-Beach-Australia.jpg",
+								"local": true
+							},
+							
+							{
+								"thumbImg": "http://www.irishtimes.com/blogs/generationemigration/files/2011/12/bondi-beach-australia-christmas.jpg",
+								"mdlImg": "http://www.irishtimes.com/blogs/generationemigration/files/2011/12/bondi-beach-australia-christmas.jpg",
+								"bigImg": "http://www.irishtimes.com/blogs/generationemigration/files/2011/12/bondi-beach-australia-christmas.jpg",
+								"local": true
+							}
 				]
 			}
 	]
